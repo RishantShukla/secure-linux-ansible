@@ -21,8 +21,7 @@ This project automates the provisioning and hardening of Ubuntu and RHEL-based L
 ## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/yourusername/secure-linux-ansible.git
+git clone https://github.com/RishantShukla/secure-linux-ansible.git
 cd secure-linux-ansible
 
 ansible-playbook -i inventory/hosts playbooks/site.yml --ask-become-pass
-
