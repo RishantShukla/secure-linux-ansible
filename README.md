@@ -26,3 +26,11 @@ cd secure-linux-ansible
 
 ansible-playbook -i inventory/hosts ./site.yml --ask-pass --ask-become-pass
 
+## Resume 
+
+**Secure Linux Automation Project – Ansible**
+_Hardened and automated Linux server deployments using Ansible aligned with CIS benchmarks._
+
+- Developed Ansible playbooks for OS hardening, SSH security, auditing, and monitoring.
+- Achieved >90% compliance using Lynis/OpenSCAP.
+- Automated the provisioning of secure, production-ready Linux environments across Ubuntu and RHEL.
