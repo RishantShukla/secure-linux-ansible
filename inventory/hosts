@@ -1,0 +1,2 @@
+[linux_host]
+172.28.187.144 ansible_user=rishant

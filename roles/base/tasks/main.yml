@@ -1,0 +1,10 @@
+- name: Set timezone
+  timezone:
+    name: "{{ timezone }}"
+
+- name: Create admin user
+  user:
+    name: "{{ admin_user }}"
+    groups: sudo
+    shell: /bin/bash
+    state: present

@@ -1,0 +1,11 @@
+- name: Install Netdata (Debian)
+  apt:
+    name: netdata
+    state: present
+  when: ansible_os_family == "Debian"
+
+- name: Start Netdata service
+  service:
+    name: netdata
+    enabled: true
+    state: started

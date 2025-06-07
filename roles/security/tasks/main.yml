@@ -1,0 +1,22 @@
+- name: Harden SSH
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?PermitRootLogin'
+    line: 'PermitRootLogin no'
+  notify: Restart SSH
+
+- name: Ensure UFW is enabled
+  ufw:
+    state: enabled
+    policy: deny
+
+- name: Allow SSH in firewall
+  ufw:
+    rule: allow
+    port: 22
+    proto: tcp
+
+- name: Install fail2ban
+  package:
+    name: fail2ban
+    state: present

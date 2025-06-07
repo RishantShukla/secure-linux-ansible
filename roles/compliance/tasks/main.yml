@@ -1,0 +1,13 @@
+- name: Install Lynis
+  apt:
+    name: lynis
+    state: present
+  when: ansible_os_family == "Debian"
+
+- name: Run Lynis audit
+  command: lynis audit system -Q
+  register: lynis_result
+
+- name: Show Lynis results
+  debug:
+    msg: "{{ lynis_result.stdout_lines }}"
