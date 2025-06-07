@@ -1,5 +1,5 @@
 - name: Secure Linux server with Ansible
-  hosts: all
+  hosts: linux_host
   become: yes
   roles:
     - base

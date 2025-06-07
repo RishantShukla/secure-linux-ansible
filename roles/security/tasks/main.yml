@@ -16,6 +16,12 @@
     port: 22
     proto: tcp
 
+- name: Install and enable auditd
+  apt:
+    name: auditd
+    state: present
+  when: ansible_os_family == "Debian"
+
 - name: Install fail2ban
   package:
     name: fail2ban
