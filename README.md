@@ -1,77 +1,63 @@
 # 🔐 Secure Linux Server Automation using Ansible
 
-This project automates the configuration, hardening, and monitoring of Linux systems (Ubuntu or RHEL-based) using **Ansible**. It follows industry best practices for system security and compliance by integrating tools like **UFW**, **Fail2Ban**, **Netdata**, and **Lynis**.
+Automate configuration, hardening, and monitoring of Linux systems (Ubuntu or RHEL-based) using Ansible. Implements best security practices with tools like UFW, Fail2Ban, Netdata, and Lynis.
 
 ---
 
 ## 📌 Project Summary
 
-Ansible-based automation framework to provision and harden Linux systems. It includes:
-- Creation of secure non-root admin users
-- SSH configuration hardening
-- Firewall and intrusion prevention setup
-- Real-time system monitoring
-- Security compliance scanning (CIS Benchmark via Lynis)
+- Provision secure non-root admin users  
+- Harden SSH configuration (disable root login, enforce key-based auth)  
+- Setup firewall and intrusion prevention (UFW/Fail2Ban)  
+- Install real-time system monitoring (Netdata)  
+- Perform security compliance scanning (Lynis - CIS Benchmark)  
 
 ---
 
 ## 🔧 Key Features
 
-| Area              | Description                                                                 |
-|-------------------|-----------------------------------------------------------------------------|
-| **Provisioning**   | Creates a secure non-root admin user and sets timezone                     |
-| **Security**       | Hardens SSH, disables root login, enables UFW, configures auditd & fail2ban |
-| **Monitoring**     | Installs and configures **Netdata** for real-time metrics                  |
-| **Compliance**     | Executes **Lynis** to identify gaps against CIS benchmarks                 |
-| **Automation**     | Uses modular Ansible roles with `group_vars` for clean configuration       |
-| **Idempotency**    | Playbook can be safely re-run without causing duplicate changes            |
+| Area        | Description                                         |
+|-------------|-----------------------------------------------------|
+| Provisioning | Secure admin user creation, timezone setting       |
+| Security     | SSH hardening, root login disabled, auditd & Fail2Ban configured |
+| Monitoring  | Netdata installation and setup                      |
+| Compliance  | Lynis scans for CIS benchmark compliance            |
+| Automation  | Modular Ansible roles with group_vars               |
+| Idempotency | Safe to re-run playbook without duplicate changes   |
 
 ---
 
 ## 📂 Project Structure
 
-```text
 secure-linux-ansible/
-├── site.yml                # Main playbook
-├── ansible.cfg             # Ansible configuration
-├── inventory/
-│   └── hosts               # Inventory file
-├── group_vars/
-│   └── all.yml             # Global variables
-├── roles/
-│   ├── base/               # Provisioning tasks
-│   ├── security/           # Hardening tasks
-│   ├── monitoring/         # Netdata setup
-│   └── compliance/         # Lynis scan and reporting
-
-## 🧪 Tools Used
-
-- **Ansible** – Automation engine for system configuration
-- **UFW** – Host-based firewall for Ubuntu systems
-- **Fail2Ban** – SSH brute-force protection
-- **auditd** – Security auditing
-- **Netdata** – Real-time performance and health monitoring
-- **Lynis** – Linux security compliance scanner (CIS benchmark aligned)
+├── site.yml # Main playbook
+├── ansible.cfg # Configuration
+├── inventory/hosts # Inventory file
+├── group_vars/all.yml # Global variables
+└── roles/
+├── base/ # Provisioning tasks
+├── security/ # Hardening tasks
+├── monitoring/ # Netdata setup
+└── compliance/ # Lynis scans
 
 ---
 
-## 🔐 Features
+## 🧪 Tools Used
 
-- SSH hardening (disables root login, enforces key-based auth)
-- Password policy enforcement
-- Firewall configuration (UFW or Firewalld)
-- Fail2Ban + auditd integration
-- Netdata or Node Exporter setup for monitoring
-- Lynis-based compliance auditing
-- Ansible Vault support for encrypted secrets
+- Ansible  
+- UFW (Ubuntu firewall)  
+- Fail2Ban (SSH brute force protection)  
+- auditd (Security auditing)  
+- Netdata (Real-time monitoring)  
+- Lynis (Security compliance scanner)  
 
 ---
 
 ## 🧰 Requirements
 
-- Ansible 2.10 or later
-- Target OS: Ubuntu 22.04 or RHEL 9 / Rocky Linux
-- SSH access with a user having `sudo` privileges
+- Ansible 2.10+  
+- Target OS: Ubuntu 22.04 or RHEL 9 / Rocky Linux  
+- SSH access with sudo privileges  
 
 ---
 
@@ -81,4 +67,4 @@ secure-linux-ansible/
 git clone https://github.com/RishantShukla/secure-linux-ansible.git
 cd secure-linux-ansible
 
-ansible-playbook -i inventory/hosts ./site.yml --ask-pass --ask-become-pass
+ansible-playbook -i inventory/hosts site.yml --ask-pass --ask-become-pass
