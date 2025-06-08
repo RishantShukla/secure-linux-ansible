@@ -1,6 +1,6 @@
 # 🔐 Secure Linux Server Automation using Ansible
 
-Automate configuration, hardening, and monitoring of Linux systems (Ubuntu or RHEL-based) using Ansible. Implements best security practices with tools like UFW, Fail2Ban, Netdata, and Lynis.
+Automated the deployment, configuration, and security hardening of a fleet of Linux servers using Ansible. Applied CIS Benchmark Level 1 recommendations for Ubuntu and RHEL systems. Integrated log management, user access auditing, and monitoring tools. Designed for enterprise environments needing secure, compliant Linux infrastructure.
 
 ---
 
