@@ -30,15 +30,24 @@ Automated the deployment, configuration, and security hardening of a fleet of Li
 ## 📂 Project Structure
 
 secure-linux-ansible/
+
 ├── site.yml # Main playbook
+
 ├── ansible.cfg # Configuration
+
 ├── inventory/hosts # Inventory file
+
 ├── group_vars/all.yml # Global variables
+
 └── roles/
-├── base/ # Provisioning tasks
-├── security/ # Hardening tasks
-├── monitoring/ # Netdata setup
-└── compliance/ # Lynis scans
+
+  ├── base/ # Provisioning tasks
+  
+  ├── security/ # Hardening tasks
+  
+  ├── monitoring/ # Netdata setup
+  
+  └── compliance/ # Lynis scans
 
 ---
 
