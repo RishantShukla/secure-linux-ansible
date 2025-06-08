@@ -29,18 +29,7 @@ Automated the deployment, configuration, and security hardening of a fleet of Li
 
 ## 📂 Project Structure
 
-secure-linux-ansible/
-├── site.yml                # Main playbook
-├── ansible.cfg             # Ansible configuration
-├── inventory/
-│   └── hosts               # Inventory file
-├── group_vars/
-│   └── all.yml             # Global variables
-├── roles/
-│   ├── base/               # Provisioning tasks
-│   ├── security/           # Hardening tasks
-│   ├── monitoring/         # Netdata setup
-│   └── compliance/         # Lynis scan and reporting
+The project secure-linux-ansible includes the main playbook site.yml, an Ansible configuration file ansible.cfg, an inventory directory containing the hosts file, a group_vars directory with global variables defined in all.yml, and a roles directory that contains modular roles for provisioning (base), security hardening (security), monitoring setup (monitoring), and compliance scanning (compliance).
 
 ---
 
